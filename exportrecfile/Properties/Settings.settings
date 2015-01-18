@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="exportrecfile.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBConnectString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=172.26.126.11;Initial Catalog=I3_IC;User Id=sa;Password=cicadmin;</Value>
+    </Setting>
+    <Setting Name="SelectCallDetail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select cd.callid,convert(varchar,cd.connecteddate,120),convert(varchar,cd.CallDurationSeconds),replace(cd.calleventlog,char(10),' '),cd.customstring1,rc.recordedcallidkey,rd.recordingfilename,rc.recordingid from calldetail as cd left join recordingcall as rc left join recordingdata as rd on rc.recordingid=rd.recordingid on cd.callid=rc.recordedcallidkey where cd.I3TimeStampGMT between dateadd(hh, -9, '{0}') and dateadd(hh, -9, '{1}') and customstring1='{2}'</Value>
+    </Setting>
+    <Setting Name="DBTimeOut" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1800</Value>
+    </Setting>
+    <Setting Name="DBConnectString2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=tishige-VAIO;Initial Catalog=I3_IC;User Id=sa;Password=cicadmin;</Value>
+    </Setting>
+    <Setting Name="DestinationDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\wavfiles</Value>
+    </Setting>
+    <Setting Name="EncryptExePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\IW_CIC\encryptwave-w32r-1-1\encryptwave-w32r-1-1.exe</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
